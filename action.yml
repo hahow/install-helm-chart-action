@@ -1,0 +1,31 @@
+name: 'Install Helm Chart'
+description: 'Installing helm chart to Google Kubernetes Engine (GKE)'
+inputs:
+  gcloud_auth_key:
+    description: 'The JSON key that is used to access GKE'
+    required: true
+  gcloud_project_id:
+    description: 'Your Google Cloud Platform project ID'
+    required: true
+  cluster_name:
+    description: 'The name of GKE cluster'
+    required: true
+  cluster_region:
+    description: 'The region of GKE cluster'
+    required: true
+  release_namespace:
+    description: 'The Kubernetes namespace to install release into'
+    required: true
+  release_name:
+    description: 'The Helm release name for this chart'
+    required: true
+  chart_name:
+    description: 'Chart reference, or path to a chart'
+    required: true
+  helm_upgrade_args:
+    description: 'Additional arguments passed to helm upgrade'
+    required: false
+    default: ''
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
