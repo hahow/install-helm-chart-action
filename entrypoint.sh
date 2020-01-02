@@ -8,6 +8,12 @@ gcloud auth activate-service-account --key-file="${gcloud_key_file}"
 gcloud config set project "${INPUT_GCLOUD_PROJECT_ID}"
 gcloud container clusters get-credentials "${INPUT_CLUSTER_NAME}" --region "${INPUT_CLUSTER_REGION}"
 
+if [[ "${INPUT_CHART_NAME}" == .* ]]
+then
+    helm repo add stable https://kubernetes-charts.storage.googleapis.com
+    helm dependency update ${INPUT_CHART_NAME}
+fi
+
 helm upgrade ${INPUT_RELEASE_NAME} ${INPUT_CHART_NAME} \
     --namespace "${INPUT_RELEASE_NAMESPACE}" \
     ${INPUT_HELM_UPGRADE_ARGS} \
