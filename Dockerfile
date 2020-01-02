@@ -5,7 +5,7 @@ FROM google/cloud-sdk:271.0.0-alpine
 ENV KUBE_LATEST_VERSION="v1.16.2"
 # Note: Latest version of helm may be found at:
 # https://github.com/kubernetes/helm/releases
-ENV HELM_VERSION="v3.0.0"
+ENV HELM_VERSION="v3.0.2"
 
 RUN set -ex \
  && apk update \
