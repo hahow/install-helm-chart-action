@@ -40,7 +40,7 @@ Installing helm chart to Google Kubernetes Engine (GKE).
 
 ## Example usage
 
-    uses: hahow/install-helm-chart-action@v1.0.0
+    uses: hahow/install-helm-chart-action@v1.0.1
     with:
       gcloud_auth_key: ${{ secrets.GCLOUD_AUTH_KEY }}
       gcloud_project_id: ${{ secrets.GCLOUD_PROJECT_ID }}
