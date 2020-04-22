@@ -1,11 +1,11 @@
-FROM google/cloud-sdk:271.0.0-alpine
+FROM google/cloud-sdk:289.0.0-alpine
 
 # Note: Latest version of kubectl may be found at:
 # https://aur.archlinux.org/packages/kubectl-bin/
-ENV KUBE_LATEST_VERSION="v1.16.2"
+ENV KUBE_LATEST_VERSION="v1.18.2"
 # Note: Latest version of helm may be found at:
 # https://github.com/kubernetes/helm/releases
-ENV HELM_VERSION="v3.0.2"
+ENV HELM_VERSION="v3.1.2"
 
 RUN set -ex \
  && apk update \
