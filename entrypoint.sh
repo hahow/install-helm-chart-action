@@ -10,7 +10,7 @@ gcloud container clusters get-credentials "${INPUT_CLUSTER_NAME}" --region "${IN
 
 if [[ "${INPUT_CHART_NAME}" == .* ]]
 then
-    helm repo add stable https://kubernetes-charts.storage.googleapis.com
+    helm repo add stable https://charts.helm.sh/stable
     helm dependency update ${INPUT_CHART_NAME}
 fi
 
